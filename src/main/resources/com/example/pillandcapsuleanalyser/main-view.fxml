@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pillandcapsuleanalyser.MainController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#open" text="Open…" />
+            <MenuItem fx:id="opBlackMenuItem" disable="true" mnemonicParsing="false" onAction="#openBlackView" text="Black view" />
+            <MenuItem mnemonicParsing="false" onAction="#restart" text="New" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Options">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showPillNums" text="Show/Hide Pill Numbers" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+   <!--
+    <Pane fx:id="pane">
+      //-->
+         <children>
+            <VBox layoutX="431.0" layoutY="38.0" prefHeight="79.0" prefWidth="192.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: lightgrey;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Individual Pill Information" underline="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " />
+                  <Text fx:id="numberText" layoutX="10.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number: " />
+                  <Text fx:id="sizeText" layoutX="10.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estimated Size (pixel units): " />
+               </children>
+               <padding>
+                  <Insets left="5.0" top="2.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="imgVbox" layoutX="14.0" layoutY="36.0" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <ImageView fx:id="origImgView" fitHeight="300.0" fitWidth="400.0" onMouseClicked="#imgViewPressed" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
+            <VBox layoutX="431.0" layoutY="133.0" prefHeight="79.0" prefWidth="192.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: lightgrey;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pill/Capsule Count" underline="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="totalText" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: 0" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="185.0">
+                     <children>
+                        <Text fx:id="numberText1" strokeType="OUTSIDE" strokeWidth="0.0" text="By type:" />
+                        <ComboBox fx:id="pillCombo" prefWidth="150.0" promptText="Pill Type" onAction="#setTypeValue">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Text fx:id="typeText" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" top="2.0" />
+               </padding>
+            </VBox>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.text.Text?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pillandcapsuleanalyser.BWController">
+   <children>
+      <ImageView fx:id="bwImgView" fitHeight="256.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true" />
+      <Slider fx:id="tSlider" max="20" min="0" onMouseReleased="#setHueThreshold" value="10" />
+      <Text fx:id="promptText" text="Please enter a pill name" fill="red" visible="false" />
+      <HBox prefHeight="76.0" prefWidth="400.0">
+         <children>
+            <TextField fx:id="nameField" promptText="Pill name" />
+            <Button fx:id="submit" onAction="#submitButtonPressed" text="Submit" />
+         </children>
+         <VBox.margin>
+            <Insets top="6.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
